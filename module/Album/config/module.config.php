@@ -12,17 +12,15 @@ return array(
             'album' => array(
                 'type' => 'segment',
                 'options' => array(
-                    'route'    => '/album[/:controller[/:action]]',
-                    'constraints' => array(
-                        'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                    'route' => '/album[/:action][/:id]',
+                    'constraints' => array(                       
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id' => '[0-9]+',
                     ),
                     'defaults' => array(
-                        '__NAMESPACE__' => 'Album\Controller',
                         'controller' => 'Album\Controller\Album',
-                        'action'     => 'index',
+                        'action' => 'index',
                     ),
-
                 ),
             ),
         ),
